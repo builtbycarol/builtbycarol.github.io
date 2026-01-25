@@ -76,6 +76,18 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     padding: 100px 0;
 }
 
+/* Section Scroll Fade-in Animation */
+.section.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 16px;
@@ -239,6 +251,68 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     object-fit: cover;
 }
 
+/* Hero Image Pop-in Animation */
+.hero-headshot {
+    opacity: 0;
+    transform: scale(0.3);
+    animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Typing Effect Styles */
+.hero-title {
+    min-height: 1.2em;
+}
+
+.hero-subtitle {
+    min-height: 1.6em;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: var(--lime);
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Hero CTA fade-in */
+.hero-cta {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .hero-title {
     color: var(--lime);
     margin-bottom: 24px;
@@ -333,10 +407,14 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 
 .services-track {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 24px;
     transition: transform 0.5s ease;
+}
+
+.service-card {
+    flex: 0 0 calc(50% - 12px);
+    min-width: calc(50% - 12px);
 }
 
 .service-card {
@@ -866,11 +944,9 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
         gap: 12px;
     }
 
-    .services-track {
-        grid-template-columns: 1fr;
-    }
-
     .service-card {
+        flex: 0 0 100%;
+        min-width: 100%;
         padding: 24px;
     }
 
