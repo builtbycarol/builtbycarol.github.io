@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/IconOnly_Transparent_NoBuffer.png">
+    <link rel="preload" as="image" href="images/CL-headshot6-600.png" media="(min-width: 481px)">
+    <link rel="preload" as="image" href="images/CL-headshot6-400.png" media="(max-width: 480px)">
 </head>
 <body>
     <!-- Navigation -->
@@ -42,7 +44,16 @@
                 <a href="#contact" class="btn btn-primary hero-cta">Let's Talk</a>
             </div>
             <div class="hero-image">
-                <img src="images/CL-headshot6.png" alt="Carol - Founder of DayOnePros" class="hero-headshot">
+                <img src="images/CL-headshot6.png"
+                     srcset="images/CL-headshot6-400.png 400w,
+                             images/CL-headshot6-600.png 600w,
+                             images/CL-headshot6.png 800w"
+                     sizes="(max-width: 480px) 375px,
+                            (max-width: 768px) 468px,
+                            600px"
+                     alt="Carol - Founder of DayOnePros"
+                     class="hero-headshot"
+                     fetchpriority="high">
             </div>
         </div>
     </section>
@@ -123,7 +134,7 @@
                     <div class="carousel-track" id="portfolio-track">
                         <div class="portfolio-card">
                             <a href="https://www.youtube.com/watch?v=FSHVd4Czk_E" target="_blank" rel="noopener noreferrer" class="portfolio-thumbnail">
-                                <img src="https://img.youtube.com/vi/FSHVd4Czk_E/maxresdefault.jpg" alt="Social Media Content Generator Demo">
+                                <img src="https://img.youtube.com/vi/FSHVd4Czk_E/maxresdefault.jpg" alt="Social Media Content Generator Demo" loading="lazy">
                                 <div class="play-button">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -140,7 +151,7 @@
                         </div>
                         <div class="portfolio-card">
                             <a href="https://youtu.be/GULSYQsca2A" target="_blank" rel="noopener noreferrer" class="portfolio-thumbnail">
-                                <img src="https://img.youtube.com/vi/GULSYQsca2A/maxresdefault.jpg" alt="Landscaping Quote Calculator Demo">
+                                <img src="https://img.youtube.com/vi/GULSYQsca2A/maxresdefault.jpg" alt="Landscaping Quote Calculator Demo" loading="lazy">
                                 <div class="play-button">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -156,7 +167,7 @@
                         </div>
                         <div class="portfolio-card">
                             <a href="https://youtu.be/p-j8v1FFMEk" target="_blank" rel="noopener noreferrer" class="portfolio-thumbnail">
-                                <img src="https://img.youtube.com/vi/p-j8v1FFMEk/maxresdefault.jpg" alt="Discovery Call Agent Demo">
+                                <img src="https://img.youtube.com/vi/p-j8v1FFMEk/maxresdefault.jpg" alt="Discovery Call Agent Demo" loading="lazy">
                                 <div class="play-button">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -185,41 +196,85 @@
     <section class="section testimonials" id="testimonials">
         <div class="container">
             <h2 class="section-title">What Clients Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Working with Carol transformed how we handle leads. What used to take hours now happens automatically. Our response time went from days to minutes."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mike R.</h4>
-                            <span>Landscaping Business Owner</span>
+            <div class="testimonials-carousel">
+                <button class="carousel-btn carousel-btn-prev" id="testimonials-prev" aria-label="Previous testimonials">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="testimonials-track-container">
+                    <div class="testimonials-track" id="testimonials-track">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Working with Carol transformed how we handle leads. What used to take hours now happens automatically. Our response time went from days to minutes."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Mike R.</h4>
+                                    <span>Landscaping Business Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Carol took the time to really understand my business and gave me clear, actionable feedback on my client intake forms — things I hadn't even thought about. She's knowledgeable, easy to talk to, and genuinely wants to help. I'd recommend her to any service business owner looking to streamline their processes."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Taylor Burbank</h4>
+                                    <span>Insurance Broker</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The discovery call agent pays for itself every month. It qualifies leads while I'm on job sites. Game changer for a small operation like mine."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>James P.</h4>
+                                    <span>General Contractor</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Placeholder testimonial text here - I'll update this later."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Client Name</h4>
+                                    <span>Business Type</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Placeholder testimonial text here - I'll update this later."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Client Name</h4>
+                                    <span>Business Type</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Placeholder testimonial text here - I'll update this later."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Client Name</h4>
+                                    <span>Business Type</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Carol took the time to really understand my business and gave me clear, actionable feedback on my client intake forms — things I hadn't even thought about. She's knowledgeable, easy to talk to, and genuinely wants to help. I'd recommend her to any service business owner looking to streamline their processes."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Taylor Burbank</h4>
-                            <span>Insurance Broker</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The discovery call agent pays for itself every month. It qualifies leads while I'm on job sites. Game changer for a small operation like mine."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>James P.</h4>
-                            <span>General Contractor</span>
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" id="testimonials-next" aria-label="Next testimonials">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
             </div>
+            <div class="carousel-dots" id="testimonials-dots"></div>
         </div>
     </section>
 
@@ -229,7 +284,14 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/CL-headshot3.png" alt="Carol - Founder of DayOnePros">
+                    <img src="images/CL-headshot3-500.png"
+                         srcset="images/CL-headshot3-300.png 300w,
+                                 images/CL-headshot3-500.png 500w,
+                                 images/CL-headshot3.png 1024w"
+                         sizes="(max-width: 768px) 280px,
+                                300px"
+                         alt="Carol - Founder of DayOnePros"
+                         loading="lazy">
                 </div>
                 <div class="about-text">
                     <p>I ran a cleaning company with 15 clients and 6 team members — and I nearly burned out. Not from the work itself, but from drowning in missed leads, scheduling chaos, and endless admin. Meanwhile, I watched big tech companies scale effortlessly using AI and automation. It didn't seem fair.</p>
@@ -279,7 +341,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/FullLogo_Transparent_NoBuffer.png" alt="DayOnePros Logo">
+                    <img src="images/FullLogo_Transparent_NoBuffer.png" alt="DayOnePros Logo" loading="lazy">
                 </div>
                 <p class="footer-tagline">Helping service businesses turn knowledge into automated systems.</p>
                 <p class="footer-copyright">&copy; 2026 DayOnePros. All rights reserved.</p>

@@ -684,10 +684,23 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     color: var(--olive);
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* Testimonials Carousel */
+.testimonials-carousel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.testimonials-track-container {
+    overflow: hidden;
+    flex: 1;
+}
+
+.testimonials-track {
+    display: flex;
     gap: 24px;
+    transition: transform 0.5s ease;
 }
 
 .testimonial-card {
@@ -700,12 +713,39 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     border: 2px solid transparent;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    flex: 0 0 calc(33.333% - 16px);
+    min-width: calc(33.333% - 16px);
 }
 
 .testimonial-card:hover {
     transform: translateY(-4px);
     border-color: var(--lime);
     box-shadow: var(--shadow-lg);
+}
+
+/* Testimonials carousel buttons */
+.testimonials-carousel .carousel-btn {
+    background-color: var(--olive);
+}
+
+.testimonials-carousel .carousel-btn:hover {
+    background-color: var(--olive-light);
+}
+
+.testimonials-carousel .carousel-btn svg {
+    stroke: var(--lime);
+}
+
+.testimonials .carousel-dots .carousel-dot {
+    background-color: rgba(45, 51, 25, 0.3);
+}
+
+.testimonials .carousel-dots .carousel-dot:hover {
+    background-color: var(--olive-light);
+}
+
+.testimonials .carousel-dots .carousel-dot.active {
+    background-color: var(--olive);
 }
 
 .testimonial-content p {
@@ -845,14 +885,9 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .testimonials-grid .testimonial-card:last-child {
-        grid-column: span 2;
-        max-width: 50%;
-        margin: 0 auto;
+    .testimonial-card {
+        flex: 0 0 calc(50% - 12px);
+        min-width: calc(50% - 12px);
     }
 }
 
@@ -975,13 +1010,14 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     }
 
     /* Testimonials */
-    .testimonials-grid {
-        grid-template-columns: 1fr;
+    .testimonials-carousel {
+        gap: 12px;
     }
 
-    .testimonials-grid .testimonial-card:last-child {
-        grid-column: span 1;
-        max-width: 100%;
+    .testimonial-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        padding: 24px;
     }
 
     /* Contact */
