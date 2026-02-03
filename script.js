@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function getTotalSlides() {
-            return Math.ceil(cards.length / cardsPerView);
+            return Math.max(1, cards.length - cardsPerView + 1);
         }
 
         function createDots() {
