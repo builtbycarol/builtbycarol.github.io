@@ -474,6 +474,20 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     left: 0;
 }
 
+.service-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--olive);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.service-link:hover {
+    color: var(--lime-dark);
+}
+
 /* ===== Portfolio Section ===== */
 .portfolio {
     background-color: var(--olive);
