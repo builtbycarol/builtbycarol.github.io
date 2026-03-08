@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+       SEO: Title & Description
+       ============================================================ -->
+  <title>Ironclad Inspections | Home Inspector in Prince George, BC</title>
+  <meta name="description" content="Ironclad Inspections — Prince George, BC's trusted home inspection company. Thorough pre-purchase, pre-listing, and new construction inspections. The Gold Standard in Home Inspections." />
+  <meta name="keywords" content="home inspection Prince George BC, home inspector Prince George, pre-purchase inspection, pre-listing inspection, new construction inspection, InterNACHI inspector BC" />
+  <link rel="canonical" href="https://ironcladinspections.ca/" />
+
+  <!-- ============================================================
+       Open Graph / Social Sharing
+       ============================================================ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ironcladinspections.ca/" />
+  <meta property="og:title" content="Ironclad Inspections | The Gold Standard in Home Inspections" />
+  <meta property="og:description" content="Thorough, trusted home inspections in Prince George, BC & surrounding communities. Inside & Out." />
+  <meta property="og:image" content="https://ironcladinspections.ca/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ============================================================
+       Favicon: Inline SVG (Shield with "II" monogram, navy/gold)
+       ============================================================ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 5 L90 20 L90 55 C90 75 70 90 50 98 C30 90 10 75 10 55 L10 20 Z' fill='%230F1E3C' stroke='%23C9A84C' stroke-width='4'/><text x='50' y='65' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='%23C9A84C' text-anchor='middle'>II</text></svg>" />
+
+  <!-- ============================================================
+       Google Fonts: Oswald (display/headings) + Inter (body)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==============================================================
+       CSS CUSTOM PROPERTIES (Design Tokens)
+       ============================================================== */
+    :root {
+      --navy:        #0F1E3C;   /* Deep Navy Blue — primary background */
+      --navy-dark:   #080F1E;   /* Darker navy for hero/footer */
+      --navy-mid:    #162444;   /* Mid navy for card backgrounds */
+      --silver:      #9BAAB8;   /* Brushed Silver — secondary text/accents */
+      --silver-light:#C8D4DE;   /* Light silver for borders */
+      --silver-pale: #EDF1F5;   /* Very light silver for light section bg */
+      --gold:        #C9A84C;   /* Golden Brass — CTAs, highlights */
+      --gold-dark:   #A8882F;   /* Darker gold for hover states */
+      --gold-light:  #E8C870;   /* Light gold for star icons */
+      --white:       #FFFFFF;
+      --off-white:   #F4F6F9;
+      --text-light:  #CBD5E1;   /* Light body text on dark bg */
+      --text-body:   #334155;   /* Dark body text on light bg */
+      --placeholder-bg: #2A3A50; /* Placeholder image background */
+
+      --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+      --font-body:    'Inter', 'Helvetica Neue', sans-serif;
+
+      --radius:    6px;
+      --radius-lg: 12px;
+      --shadow:    0 4px 20px rgba(0, 0, 0, 0.25);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+      --transition: all 0.25s ease;
+
+      --max-width: 1140px;
+      --section-pad: 80px 20px;
+      --nav-height: 70px;
+    }
+
+    /* ==============================================================
+       RESET & BASE
+       ============================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ==============================================================
+       UTILITY CLASSES
+       ============================================================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .section-heading--light {
+      color: var(--white);
+    }
+
+    .section-heading--dark {
+      color: var(--navy);
+    }
+
+    .section-subheading {
+      font-size: 1.1rem;
+      color: var(--silver);
+      margin-top: 12px;
+      max-width: 600px;
+    }
+
+    /* Gold divider line */
+    .gold-rule {
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 16px 0 24px;
+    }
+
+    /* Placeholder image box */
+    .placeholder-img {
+      background: var(--placeholder-bg);
+      border: 2px dashed var(--silver);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: var(--silver-light);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-color: var(--gold);
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--silver-light);
+    }
+
+    .btn-outline:hover, .btn-outline:focus {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Stars */
+    .stars {
+      color: var(--gold-light);
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    /* ==============================================================
+       NAVIGATION
+       ============================================================== */
+    #site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      background: rgba(8, 15, 30, 0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      transition: var(--transition);
+    }
+
+    #site-nav.scrolled {
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* Logo text */
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    /* Desktop nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver-light);
+      transition: var(--transition);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .nav-cta {
+      flex-shrink: 0;
+    }
+
+    .nav-cta .btn {
+      padding: 10px 22px;
+      font-size: 0.85rem;
+    }
+
+    /* Hamburger — mobile only */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--silver-light);
+      transition: var(--transition);
+    }
+
+    /* Mobile menu */
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .nav-mobile-menu.open {
+      display: block;
+    }
+
+    .nav-mobile-menu a {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver-light);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      transition: var(--transition);
+    }
+
+    .nav-mobile-menu a:hover {
+      color: var(--gold);
+    }
+
+    .nav-mobile-menu .btn {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* ==============================================================
+       HERO SECTION
+       ============================================================== */
+    #hero {
+      min-height: 100vh;
+      background:
+        /* Subtle diagonal brushed-metal gradient overlay */
+        linear-gradient(
+          135deg,
+          rgba(15, 30, 60, 0.97) 0%,
+          rgba(15, 30, 60, 0.90) 40%,
+          rgba(22, 36, 68, 0.95) 70%,
+          rgba(8, 15, 30, 0.98) 100%
+        ),
+        /* Steel texture: repeating thin lines */
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 3px,
+          rgba(255,255,255,0.015) 3px,
+          rgba(255,255,255,0.015) 6px
+        );
+      background-color: var(--navy-dark);
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-height);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative gold accent line — top left */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    /* Decorative circle — large background element */
+    #hero::after {
+      content: '';
+      position: absolute;
+      right: -200px;
+      bottom: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 168, 76, 0.08);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 60px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .hero-headline span {
+      color: var(--gold);
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver-light);
+      margin-bottom: 20px;
+    }
+
+    .hero-intro {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-light);
+      margin-bottom: 36px;
+      max-width: 480px;
+      padding: 16px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201, 168, 76, 0.05);
+      font-style: italic;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--silver);
+      font-size: 0.9rem;
+    }
+
+    .hero-location svg {
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-img-placeholder {
+      height: 440px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    /* Floating badge on hero image */
+    .hero-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-badge .number {
+      font-size: 2rem;
+      display: block;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    /* ==============================================================
+       ABOUT SECTION
+       ============================================================== */
+    #about {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+
+    .about-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-content {}
+
+    .about-text p {
+      color: var(--text-body);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    /* Certification badges */
+    .cert-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 4px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .cert-badge svg {
+      flex-shrink: 0;
+    }
+
+    /* About image & sidebar */
+    .about-sidebar {}
+
+    .about-img-placeholder {
+      height: 380px;
+      margin-bottom: 28px;
+    }
+
+    /* Value props / quick stats */
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px;
+      border-radius: var(--radius);
+      border-left: 3px solid var(--gold);
+    }
+
+    .stat-card .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      color: var(--silver-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==============================================================
+       SERVICES SECTION
+       ============================================================== */
+    #services {
+      padding: var(--section-pad);
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle background texture */
+    #services::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 30px,
+        rgba(255,255,255,0.012) 30px,
+        rgba(255,255,255,0.012) 31px
+      );
+      pointer-events: none;
+    }
+
+    .services-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .services-header {
+      margin-bottom: 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(155, 170, 184, 0.15);
+      border-top: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201, 168, 76, 0.4);
+      border-top-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    /* Icon placeholder box */
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--gold);
+    }
+
+    .service-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--silver);
+      line-height: 1.65;
+    }
+
+    /* ==============================================================
+       SERVICE AREA SECTION
+       ============================================================== */
+    #service-area {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+
+    .area-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .area-map-placeholder {
+      height: 320px;
+      border-radius: var(--radius-lg);
+    }
+
+    .community-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .community-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+
+    .community-item::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .area-radius-note {
+      margin-top: 20px;
+      padding: 14px 18px;
+      background: var(--navy);
+      color: var(--silver-light);
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* ==============================================================
+       TESTIMONIALS SECTION
+       ============================================================== */
+    #testimonials {
+      padding: var(--section-pad);
+      background: var(--navy-dark);
+    }
+
+    .testimonials-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .testimonials-header .gold-rule {
+      margin: 16px auto 0;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(155, 170, 184, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      position: relative;
+    }
+
+    /* Large decorative quote mark */
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.2;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-stars {
+      margin-bottom: 14px;
+    }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--placeholder-bg);
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .testimonial-context {
+      font-size: 0.8rem;
+      color: var(--silver);
+      margin-top: 2px;
+    }
+
+    /* ==============================================================
+       BOOKING SECTION
+       ============================================================== */
+    #booking {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+
+    .booking-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .booking-inner .section-heading--dark {
+      margin-bottom: 8px;
+    }
+
+    .booking-intro {
+      color: var(--text-body);
+      margin-bottom: 36px;
+      font-size: 1rem;
+    }
+
+    /* Calendly placeholder widget */
+    .calendly-placeholder {
+      background: var(--white);
+      border: 2px dashed var(--silver-light);
+      border-radius: var(--radius-lg);
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .calendly-placeholder svg {
+      width: 60px;
+      height: 60px;
+      color: var(--silver-light);
+      margin-bottom: 16px;
+    }
+
+    .calendly-placeholder p {
+      color: var(--silver);
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    .calendly-placeholder p strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .booking-note {
+      font-size: 0.9rem;
+      color: var(--silver);
+      margin-top: 16px;
+    }
+
+    .booking-note a {
+      color: var(--gold);
+      font-weight: 500;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+    }
+
+    /* ==============================================================
+       CONTACT / CALLBACK SECTION
+       ============================================================== */
+    #contact {
+      padding: var(--section-pad);
+      background: var(--navy);
+    }
+
+    .contact-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-form-col {}
+
+    /* Form styles */
+    .callback-form {
+      background: var(--navy-mid);
+      border: 1px solid rgba(155, 170, 184, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver-light);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(155, 170, 184, 0.25);
+      border-radius: var(--radius);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 12px 14px;
+      transition: var(--transition);
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--silver);
+      opacity: 0.6;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.05);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239BAAB8' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+
+    /* Style select option elements */
+    .form-group select option {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+    }
+
+    /* Contact info column */
+    .contact-info-col {}
+
+    .contact-info-col .section-label {
+      margin-bottom: 6px;
+    }
+
+    .contact-info-col .section-heading--light {
+      margin-bottom: 8px;
+    }
+
+    .contact-detail-list {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-detail-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius);
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .contact-detail-text {
+      flex: 1;
+    }
+
+    .contact-detail-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 3px;
+    }
+
+    .contact-detail-value {
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+
+    .contact-detail-value a {
+      color: var(--white);
+      transition: var(--transition);
+    }
+
+    .contact-detail-value a:hover {
+      color: var(--gold);
+    }
+
+    /* ==============================================================
+       FOOTER
+       ============================================================== */
+    #footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 36px 20px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-location {
+      font-size: 0.8rem;
+      color: var(--silver);
+      margin-top: 4px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--silver);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      text-align: right;
+    }
+
+    .footer-copy p {
+      font-size: 0.8rem;
+      color: var(--silver);
+      line-height: 1.7;
+    }
+
+    .footer-copy a {
+      color: var(--gold);
+      transition: var(--transition);
+    }
+
+    .footer-copy a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ==============================================================
+       RESPONSIVE — TABLET (≤ 900px)
+       ============================================================== */
+    @media (max-width: 900px) {
+      :root {
+        --section-pad: 60px 20px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-eyebrow {
+        justify-content: center;
+      }
+
+      .hero-intro {
+        margin: 0 auto 36px;
+        text-align: left;
+      }
+
+      .hero-ctas {
+        justify-content: center;
+      }
+
+      .hero-location {
+        justify-content: center;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-img-placeholder {
+        height: 280px;
+      }
+
+      .hero-badge {
+        bottom: -10px;
+        left: 10px;
+      }
+
+      .about-inner,
+      .area-inner,
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-sidebar {
+        order: -1;
+      }
+
+      .about-img-placeholder {
+        height: 280px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-copy {
+        text-align: center;
+      }
+    }
+
+    /* ==============================================================
+       RESPONSIVE — MOBILE (≤ 600px)
+       ============================================================== */
+    @media (max-width: 600px) {
+      :root {
+        --section-pad: 50px 16px;
+      }
+
+      /* Hide desktop nav links, show hamburger */
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .hero-inner {
+        padding: 40px 16px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .community-list {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .callback-form {
+        padding: 24px 18px;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+
+    /* ==============================================================
+       SKIP LINK (Accessibility)
+       ============================================================== */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============================================================
+       STICKY NAVIGATION
+       ============================================================ -->
+  <nav id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Ironclad Inspections — home">
+        IRONCLAD <span>INSPECTIONS</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about">Why Ironclad</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#service-area">Service Area</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Book Now CTA -->
+      <div class="nav-cta">
+        <a href="#booking" class="btn btn-primary">Book Now</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile navigation menu -->
+  <div class="nav-mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile menu">
+    <a href="#about" class="mobile-nav-link">Why Ironclad</a>
+    <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#service-area" class="mobile-nav-link">Service Area</a>
+    <a href="#testimonials" class="mobile-nav-link">Reviews</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="#booking" class="btn btn-primary">Book Your Inspection</a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ==========================================================
+         SECTION 1: HERO
+         ========================================================== -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+
+        <!-- Left: Text content -->
+        <div class="hero-content">
+          <p class="hero-eyebrow">Prince George, BC</p>
+
+          <h1 class="hero-headline" id="hero-heading">
+            The <span>Gold Standard</span><br />in Home<br />Inspections
+          </h1>
+
+          <p class="hero-subheadline">Thorough. Trusted. Inside &amp; Out.</p>
+
+          <!-- PLACEHOLDER: 1-2 sentences about Mike's approach -->
+          <p class="hero-intro">
+            [PLACEHOLDER: 1-2 sentences about Mike's approach to inspections — what makes Ironclad different. Example: "Mike Webber brings years of hands-on experience to every inspection, delivering the detailed reports and straight answers you need to make confident decisions about your home."]
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#booking" class="btn btn-primary">Book Your Inspection</a>
+            <a href="#contact" class="btn btn-outline">Request a Callback</a>
+          </div>
+
+          <p class="hero-location">
+            <!-- Location pin icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Serving Prince George, BC &amp; surrounding communities
+          </p>
+        </div>
+
+        <!-- Right: Hero image placeholder -->
+        <div class="hero-image">
+          <div class="placeholder-img hero-img-placeholder" role="img" aria-label="Photo: Ironclad Inspections — inspector at work on a job site">
+            [Photo: Mike on a job site — inspector in action, exterior of a home]
+          </div>
+          <!-- Floating credential badge -->
+          <div class="hero-badge" aria-label="[PLACEHOLDER: Years of experience or inspections completed]">
+            <span class="number">[##]</span>
+            Inspections<br />Completed
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 2: ABOUT / WHY IRONCLAD
+         ========================================================== -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="about-inner">
+
+        <!-- Left: Content -->
+        <div class="about-content">
+          <p class="section-label">The Inspector</p>
+          <h2 class="section-heading section-heading--dark" id="about-heading">Why Ironclad?</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+
+          <div class="about-text">
+            <!-- PLACEHOLDER: 3-4 paragraphs about Mike -->
+            <p>[PLACEHOLDER: Paragraph 1 — Mike's background and how he got into home inspections. What trades or construction experience does he bring? How long has he been working in Prince George / Northern BC?]</p>
+            <p>[PLACEHOLDER: Paragraph 2 — Mike's inspection philosophy. What does a thorough inspection mean to him? What does he look at that others might miss?]</p>
+            <p>[PLACEHOLDER: Paragraph 3 — What clients can expect: the report format, timeline, how Mike communicates findings. Is he available for follow-up questions?]</p>
+            <p>[PLACEHOLDER: Paragraph 4 — Personal touch or commitment statement. Why Ironclad? What does the name represent to Mike?]</p>
+          </div>
+
+          <!-- Certification badges -->
+          <div class="cert-badges" aria-label="Certifications and credentials">
+            <!-- PLACEHOLDER: Replace with Mike's actual certifications -->
+            <span class="cert-badge">
+              <!-- Shield icon -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              [PLACEHOLDER: Cert 1 — e.g., InterNACHI]
+            </span>
+            <span class="cert-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              [PLACEHOLDER: Cert 2 — e.g., CPBC Licensed]
+            </span>
+            <span class="cert-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              [PLACEHOLDER: Cert 3 — e.g., Fully Insured]
+            </span>
+            <span class="cert-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              [PLACEHOLDER: Cert 4]
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Image + stats -->
+        <div class="about-sidebar">
+          <div class="placeholder-img about-img-placeholder" role="img" aria-label="Photo: Mike Webber, Owner and Inspector at Ironclad Inspections">
+            [Photo: Mike Webber, Owner &amp; Inspector — portrait on a job site or professional headshot]
+          </div>
+
+          <!-- Quick stats -->
+          <div class="about-stats" aria-label="Key stats">
+            <div class="stat-card">
+              <div class="stat-num">[##]</div>
+              <div class="stat-label">Inspections Completed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">[##]</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Detailed Reports</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">5★</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 3: SERVICES
+         ========================================================== -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="services-inner">
+
+        <div class="services-header">
+          <p class="section-label">What We Do</p>
+          <h2 class="section-heading section-heading--light" id="services-heading">What We Inspect —<br />Inside &amp; Out</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+          <p class="section-subheading">Every inspection is thorough, documented, and delivered with straight answers — no jargon, no shortcuts.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Service card 1 -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <!-- House/search icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="service-title">Pre-Purchase Inspections</h3>
+            <p class="service-desc">[PLACEHOLDER: Description of pre-purchase inspection — what's covered, why it matters, how it protects buyers. E.g., "Before you sign, know exactly what you're buying. A thorough inspection of structure, systems, and components so there are no surprises after closing."]</p>
+          </article>
+
+          <!-- Service card 2 -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <!-- Tag/listing icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <h3 class="service-title">Pre-Listing / Seller Inspections</h3>
+            <p class="service-desc">[PLACEHOLDER: Description of pre-listing inspection — benefits for sellers, how it prevents deal-fall-throughs, pricing advantage. E.g., "List with confidence. Identify and address issues before buyers do — protecting your asking price and keeping your sale on track."]</p>
+          </article>
+
+          <!-- Service card 3 -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <!-- Building/construction icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="service-title">New Construction Inspections</h3>
+            <p class="service-desc">[PLACEHOLDER: Description of new construction inspection — why new builds still need inspection, phase inspections, deficiency walks. E.g., "New doesn't mean perfect. Catch builder deficiencies before possession and hold trades accountable for their work."]</p>
+          </article>
+
+          <!-- Service card 4 -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <!-- Calendar/maintenance icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="service-title">Annual Maintenance Inspections</h3>
+            <p class="service-desc">[PLACEHOLDER: Description of maintenance inspection — preventative approach, catching small issues before they become expensive, good for any homeowner. E.g., "Stay ahead of costly repairs. Annual inspections help you maintain your home's value and catch problems while they're still small."]</p>
+          </article>
+
+          <!-- Service card 5 — PLACEHOLDER -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <!-- Wrench/tool icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="service-title">[PLACEHOLDER: Service 5 Title]</h3>
+            <p class="service-desc">[PLACEHOLDER: Description of additional service — e.g., Warranty Inspections, Condo Inspections, Acreage/Rural Property Inspections, etc.]</p>
+          </article>
+
+          <!-- Service card 6 — PLACEHOLDER -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <!-- Clipboard/report icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+            </div>
+            <h3 class="service-title">[PLACEHOLDER: Service 6 Title]</h3>
+            <p class="service-desc">[PLACEHOLDER: Description of additional service — e.g., Thermal Imaging, Sewer Scope, Air Quality Testing, Radon Testing, Drone Roof Inspection, etc.]</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 4: SERVICE AREA
+         ========================================================== -->
+    <section id="service-area" aria-labelledby="area-heading">
+      <div class="area-inner">
+
+        <!-- Left: Map placeholder -->
+        <div>
+          <div class="placeholder-img area-map-placeholder" role="img" aria-label="Map showing Ironclad Inspections service area centered on Prince George, BC">
+            [Map: Service area map centered on Prince George, BC — showing radius and surrounding communities. Replace with Google Maps embed or image.]
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div>
+          <p class="section-label">Where We Work</p>
+          <h2 class="section-heading section-heading--dark" id="area-heading">Serving Prince George &amp; Surrounding Communities</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+          <p style="color: var(--text-body); margin-bottom: 16px;">Ironclad Inspections serves Prince George and the communities throughout Northern BC. Not sure if we cover your area? Give us a call — we're happy to travel for the right job.</p>
+
+          <!-- Community list — PLACEHOLDER: Update with Mike's actual service area -->
+          <ul class="community-list" aria-label="Communities served">
+            <li class="community-item">Prince George</li>
+            <li class="community-item">[PLACEHOLDER: Community 2]</li>
+            <li class="community-item">[PLACEHOLDER: Community 3]</li>
+            <li class="community-item">[PLACEHOLDER: Community 4]</li>
+            <li class="community-item">[PLACEHOLDER: Community 5]</li>
+            <li class="community-item">[PLACEHOLDER: Community 6]</li>
+            <li class="community-item">[PLACEHOLDER: Community 7]</li>
+            <li class="community-item">[PLACEHOLDER: Community 8]</li>
+          </ul>
+
+          <div class="area-radius-note" role="note">
+            <!-- PLACEHOLDER: Update radius/travel policy -->
+            [PLACEHOLDER: Note about service radius — e.g., "Serving within a [##] km radius of Prince George. Travel fees may apply outside the immediate area. Contact us to confirm coverage for your location."]
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 5: TESTIMONIALS
+         ========================================================== -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="testimonials-inner">
+
+        <div class="testimonials-header">
+          <p class="section-label">Client Reviews</p>
+          <h2 class="section-heading section-heading--light" id="testimonials-heading">What Homeowners Are Saying</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <!-- Testimonial 1 — PLACEHOLDER -->
+          <article class="testimonial-card">
+            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "[PLACEHOLDER: Testimonial quote 1 — something a satisfied client said about their experience with Mike. E.g., 'Mike was incredibly thorough — he found things even the seller's agent didn't know about. His report was clear, detailed, and saved us from a very expensive mistake.']"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">[A]</div>
+              <div>
+                <div class="testimonial-name">[PLACEHOLDER: Client Name 1]</div>
+                <div class="testimonial-context">[PLACEHOLDER: Context — e.g., Pre-Purchase Inspection, Prince George]</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 — PLACEHOLDER -->
+          <article class="testimonial-card">
+            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "[PLACEHOLDER: Testimonial quote 2 — another client experience. E.g., 'We listed our home with confidence because Mike's pre-listing inspection helped us fix the right things first. Our sale went smooth as could be.']"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">[B]</div>
+              <div>
+                <div class="testimonial-name">[PLACEHOLDER: Client Name 2]</div>
+                <div class="testimonial-context">[PLACEHOLDER: Context — e.g., Pre-Listing Inspection, Prince George]</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 — PLACEHOLDER -->
+          <article class="testimonial-card">
+            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "[PLACEHOLDER: Testimonial quote 3 — a third client experience. E.g., 'I appreciated how Mike explained everything as we walked through the house. He was patient with all my questions and I left feeling like I truly understood the property.']"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">[C]</div>
+              <div>
+                <div class="testimonial-name">[PLACEHOLDER: Client Name 3]</div>
+                <div class="testimonial-context">[PLACEHOLDER: Context — e.g., New Construction Inspection, [Community]]</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 6: BOOKING
+         ========================================================== -->
+    <section id="booking" aria-labelledby="booking-heading">
+      <div class="booking-inner">
+
+        <p class="section-label" style="text-align: center;">Schedule Online</p>
+        <h2 class="section-heading section-heading--dark" id="booking-heading">Book Your Inspection</h2>
+        <span class="gold-rule" style="margin: 16px auto 24px;" aria-hidden="true"></span>
+        <p class="booking-intro">Select a date and time that works for you. Inspections are typically [PLACEHOLDER: duration, e.g., 2–4 hours] depending on the size of the property.</p>
+
+        <!--
+          CALENDLY EMBED PLACEHOLDER
+          ============================================================
+          To activate: Replace the div below with Calendly's inline
+          embed script. Example:
+            <div class="calendly-inline-widget"
+                 data-url="https://calendly.com/YOUR_LINK"
+                 style="min-width:320px;height:700px;"></div>
+            <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+          ============================================================
+        -->
+        <!-- Replace with Calendly inline embed script -->
+        <div class="calendly-placeholder" role="region" aria-label="Booking widget placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <circle cx="8" cy="14" r="1" fill="currentColor"/>
+            <circle cx="12" cy="14" r="1" fill="currentColor"/>
+            <circle cx="16" cy="14" r="1" fill="currentColor"/>
+          </svg>
+          <p>
+            <strong>Calendly Booking Widget</strong>
+            Online booking calendar will appear here.<br />
+            Replace this block with your Calendly embed code.
+          </p>
+        </div>
+
+        <p class="booking-note">
+          Prefer to talk first? <a href="#contact">Request a callback below</a> and Mike will get back to you promptly.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 7: CONTACT / CALLBACK REQUEST
+         ========================================================== -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="contact-inner">
+
+        <!-- Left: Form -->
+        <div class="contact-form-col">
+          <p class="section-label">Get in Touch</p>
+          <h2 class="section-heading section-heading--light" id="contact-heading">Request a Callback</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+
+          <!--
+            FORMSPREE FORM
+            ============================================================
+            Action URL: Replace [PLACEHOLDER-FORM-ID] with the actual
+            Formspree form ID once Carol sets it up.
+            Example: https://formspree.io/f/xabc1234
+            ============================================================
+          -->
+          <form
+            class="callback-form"
+            action="https://formspree.io/f/[PLACEHOLDER-FORM-ID]"
+            method="POST"
+            novalidate
+            aria-label="Callback request form"
+          >
+            <!-- Honeypot field for spam protection -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-row">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="contact-name">Full Name <span aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Jane Smith"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="contact-phone">Phone Number <span aria-hidden="true">*</span></label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="phone"
+                  placeholder="(250) 555-0123"
+                  required
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                placeholder="jane@example.com"
+                autocomplete="email"
+              />
+            </div>
+
+            <!-- Best time to call -->
+            <div class="form-group">
+              <label for="contact-time">Best Time to Call <span aria-hidden="true">*</span></label>
+              <select id="contact-time" name="best_time" required>
+                <option value="" disabled selected>Select a time...</option>
+                <option value="morning">Morning (8am – 12pm)</option>
+                <option value="afternoon">Afternoon (12pm – 5pm)</option>
+                <option value="evening">Evening (5pm – 8pm)</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="contact-message">Brief Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                placeholder="Tell us about the property or what you're looking for..."
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary form-submit">Send Request</button>
+
+          </form>
+        </div>
+
+        <!-- Right: Contact info -->
+        <div class="contact-info-col">
+          <p class="section-label">Contact Info</p>
+          <h3 class="section-heading section-heading--light" style="font-size: 1.8rem;">Let's Talk</h3>
+          <span class="gold-rule" aria-hidden="true"></span>
+
+          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.75; margin-bottom: 8px;">
+            Have questions before booking? Mike is happy to answer them. Reach out directly or use the form and he'll get back to you quickly.
+          </p>
+
+          <ul class="contact-detail-list" aria-label="Contact details">
+
+            <!-- Email -->
+            <li class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-value">
+                  <a href="mailto:ironcladinspect@gmail.com">ironcladinspect@gmail.com</a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Phone — PLACEHOLDER -->
+            <li class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09A16 16 0 0016.09 16.1l.56-.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <div class="contact-detail-label">Phone</div>
+                <div class="contact-detail-value">
+                  <!-- PLACEHOLDER: Replace with Mike's actual phone number -->
+                  <a href="tel:+1XXXXXXXXXX">[PLACEHOLDER: (250) XXX-XXXX]</a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Location -->
+            <li class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <div class="contact-detail-label">Location</div>
+                <div class="contact-detail-value">Prince George, BC &amp; surrounding area</div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <!-- Left: Logo & location -->
+      <div>
+        <div class="footer-logo">IRONCLAD <span>INSPECTIONS</span></div>
+        <div class="footer-location">Prince George, BC, Canada</div>
+      </div>
+
+      <!-- Center: Policy links -->
+      <nav class="footer-links" aria-label="Footer links">
+        <!-- PLACEHOLDER: Replace # with actual Privacy Policy and Terms pages once created -->
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#booking">Book an Inspection</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Right: Copyright & credit -->
+      <div class="footer-copy">
+        <p>&copy; 2026 Ironclad Inspections. All rights reserved.</p>
+        <p>Website by <a href="https://www.dayonepros.com" target="_blank" rel="noopener noreferrer">DayOnePros.com</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT — Inline
+       ============================================================ -->
+  <script>
+    // ----------------------------------------------------------------
+    // 1. Sticky nav — add 'scrolled' class on scroll for shadow
+    // ----------------------------------------------------------------
+    const nav = document.getElementById('site-nav');
+
+    function handleNavScroll() {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+    handleNavScroll(); // Run on load
+
+    // ----------------------------------------------------------------
+    // 2. Mobile hamburger menu toggle
+    // ----------------------------------------------------------------
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+
+    // Close mobile menu when a link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
+    // Close mobile menu on outside click
+    document.addEventListener('click', function (e) {
+      if (mobileMenu.classList.contains('open') &&
+          !mobileMenu.contains(e.target) &&
+          !navToggle.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+      }
+    });
+
+    // ----------------------------------------------------------------
+    // 3. Active nav link highlighting on scroll
+    //    (highlights the nav link corresponding to the visible section)
+    // ----------------------------------------------------------------
+    const sections = document.querySelectorAll('section[id]');
+    const navLinkEls = document.querySelectorAll('.nav-links a');
+
+    function highlightNav() {
+      let currentId = '';
+      const scrollPos = window.scrollY + 100; // offset for fixed nav
+
+      sections.forEach(function (section) {
+        if (section.offsetTop <= scrollPos) {
+          currentId = section.id;
+        }
+      });
+
+      navLinkEls.forEach(function (link) {
+        link.style.color = '';
+        link.style.borderBottomColor = '';
+        if (link.getAttribute('href') === '#' + currentId) {
+          link.style.color = 'var(--gold)';
+          link.style.borderBottomColor = 'var(--gold)';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightNav, { passive: true });
+    highlightNav();
+
+    // ----------------------------------------------------------------
+    // 4. Form submission feedback (Formspree handles the actual POST)
+    //    Shows a thank-you message after successful submission
+    // ----------------------------------------------------------------
+    const callbackForm = document.querySelector('.callback-form');
+
+    if (callbackForm) {
+      callbackForm.addEventListener('submit', function (e) {
+        // Formspree handles the real submission via action URL.
+        // This adds a visual response for the user.
+        // No need to preventDefault — let Formspree's AJAX handle it
+        // if you add their JS SDK later. For now, standard POST redirect works.
+
+        // Optional: You can add Formspree AJAX later with their SDK.
+        // For now, the form submits normally and Formspree handles redirect.
+      });
+    }
+
+    // ----------------------------------------------------------------
+    // 5. Smooth scroll polyfill for older browsers
+    //    (Modern browsers handle scroll-behavior: smooth in CSS)
+    // ----------------------------------------------------------------
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          const navOffset = document.getElementById('site-nav').offsetHeight;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - navOffset;
+          window.scrollTo({ top: targetTop, behavior: 'smooth' });
+        }
+      });
+    });
+
+  </script>
+
+</body>
+</html>
