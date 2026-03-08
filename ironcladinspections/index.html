@@ -273,7 +273,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 18px;  /* reduced from 28px to fit extra links */
       flex: 1;
       justify-content: center;
     }
@@ -1221,6 +1221,16 @@
         text-align: left;
       }
 
+      .hero-phone {
+        justify-content: center;
+      }
+
+      .hero-phone-divider {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .hero-ctas {
         justify-content: center;
       }
@@ -1310,6 +1320,508 @@
     }
 
     /* ==============================================================
+       HERO PHONE NUMBER
+       ============================================================== */
+
+    /* Wrapper row for the phone number in the hero */
+    .hero-phone {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    /* The phone icon circle */
+    .hero-phone-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      animation: pulse-ring 2.5s infinite;
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.3); }
+      50%       { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
+    }
+
+    .hero-phone-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-phone-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 2px;
+    }
+
+    /* The actual phone number link — large and tapable */
+    .hero-phone a {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      transition: var(--transition);
+      line-height: 1;
+    }
+
+    .hero-phone a:hover {
+      color: var(--gold-light);
+    }
+
+    /* Separator between phone and CTAs */
+    .hero-phone-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--silver);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-phone-divider::before,
+    .hero-phone-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(155, 170, 184, 0.25);
+    }
+
+    /* ==============================================================
+       NAV PHONE NUMBER (desktop only)
+       ============================================================== */
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      transition: var(--transition);
+      padding: 8px 12px;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: var(--radius);
+    }
+
+    .nav-phone:hover {
+      color: var(--gold-light);
+      border-color: rgba(201, 168, 76, 0.5);
+      background: rgba(201, 168, 76, 0.06);
+    }
+
+    /* Mobile menu phone link — large, prominent tap target */
+    .mobile-phone-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      color: var(--gold) !important;
+      font-family: var(--font-display) !important;
+      font-size: 1.3rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.06em !important;
+      text-transform: none !important;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.25) !important;
+    }
+
+    /* ==============================================================
+       PRICING SECTION
+       ============================================================== */
+    #pricing {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+
+    .pricing-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .pricing-header {
+      margin-bottom: 48px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border: 1px solid var(--silver-light);
+      border-top: 4px solid var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Featured card — navy background */
+    .pricing-card.featured {
+      border-top-color: var(--gold);
+      background: var(--navy);
+    }
+
+    .pricing-card-label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .pricing-card-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .pricing-card.featured .pricing-card-title {
+      color: var(--white);
+    }
+
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .pricing-price-note {
+      font-size: 0.8rem;
+      color: var(--silver);
+      margin-bottom: 16px;
+    }
+
+    .pricing-divider {
+      display: block;
+      height: 1px;
+      background: var(--silver-light);
+      margin: 16px 0;
+    }
+
+    .pricing-card.featured .pricing-divider {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .pricing-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .pricing-card.featured .pricing-card-desc {
+      color: var(--text-light);
+    }
+
+    /* Call-to-action bar below pricing cards */
+    .pricing-cta-bar {
+      text-align: center;
+      padding: 22px 28px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      color: var(--silver-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .pricing-cta-bar a {
+      color: var(--gold);
+      font-weight: 700;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      transition: var(--transition);
+    }
+
+    .pricing-cta-bar a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ==============================================================
+       FAQ SECTION
+       ============================================================== */
+    #faq {
+      padding: var(--section-pad);
+      background: var(--navy);
+    }
+
+    .faq-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .faq-header .gold-rule {
+      margin: 16px auto 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Individual FAQ item */
+    .faq-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(155, 170, 184, 0.15);
+    }
+
+    /* The clickable question row — a <button> */
+    .faq-question {
+      width: 100%;
+      background: var(--navy-mid);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px;
+      text-align: left;
+      transition: background 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(201, 168, 76, 0.06);
+    }
+
+    .faq-item.open > .faq-question {
+      background: rgba(201, 168, 76, 0.08);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .faq-question-text {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    /* Gold +/× icon badge */
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1;
+      transition: var(--transition);
+      font-family: Arial, sans-serif;
+      user-select: none;
+    }
+
+    .faq-item.open > .faq-question .faq-icon {
+      background: var(--gold);
+      color: var(--navy-dark);
+      transform: rotate(45deg);
+    }
+
+    /* Answer panel — hidden by default, shown when .open */
+    .faq-answer {
+      display: none;
+      background: var(--navy-mid);
+      padding: 20px 24px;
+      border-top: 0;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-answer p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* ==============================================================
+       TESTIMONIALS — STATE 1 (Launch: 0 reviews)
+       ============================================================== */
+
+    /* Centered launch state card */
+    .testimonials-launch {
+      text-align: center;
+    }
+
+    .testimonials-launch-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(155, 170, 184, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 52px 44px;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+
+    .testimonials-launch-icon {
+      width: 68px;
+      height: 68px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 2px solid rgba(201, 168, 76, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--gold);
+    }
+
+    .testimonials-launch-stars {
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      letter-spacing: 4px;
+    }
+
+    .testimonials-launch-headline {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .testimonials-launch-text {
+      font-size: 0.98rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+
+    .testimonials-launch-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Google review link below card */
+    .testimonials-google-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--silver);
+      font-size: 0.85rem;
+    }
+
+    .testimonials-google-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--silver-light);
+      font-size: 0.85rem;
+      transition: var(--transition);
+      border-bottom: 1px solid rgba(200, 212, 222, 0.3);
+    }
+
+    .testimonials-google-link:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ==============================================================
+       NEW RESPONSIVE OVERRIDES for added sections
+       ============================================================== */
+    @media (max-width: 900px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .testimonials-launch-card {
+        padding: 36px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      /* Phone in nav — hide on mobile (it's in mobile menu instead) */
+      .nav-phone {
+        display: none;
+      }
+
+      .hero-phone a {
+        font-size: 1.5rem;
+      }
+
+      .faq-question {
+        padding: 16px 18px;
+      }
+
+      .faq-answer {
+        padding: 16px 18px;
+      }
+
+      .faq-question-text {
+        font-size: 0.9rem;
+      }
+
+      .testimonials-launch-card {
+        padding: 28px 18px;
+      }
+    }
+
+    /* ==============================================================
        SKIP LINK (Accessibility)
        ============================================================== */
     .skip-link {
@@ -1352,13 +1864,19 @@
       <ul class="nav-links" role="list">
         <li><a href="#about">Why Ironclad</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#service-area">Service Area</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <!-- Book Now CTA -->
-      <div class="nav-cta">
+      <!-- Right side: phone number + Book Now CTA -->
+      <div class="nav-cta" style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+        <!-- PLACEHOLDER: Replace with Mike's actual phone number -->
+        <a href="tel:+1XXXXXXXXXX" class="nav-phone" aria-label="Call Ironclad Inspections">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09A16 16 0 0016.09 16.1l.56-.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          [PLACEHOLDER: (250) XXX-XXXX]
+        </a>
         <a href="#booking" class="btn btn-primary">Book Now</a>
       </div>
 
@@ -1374,10 +1892,20 @@
 
   <!-- Mobile navigation menu -->
   <div class="nav-mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile menu">
+
+    <!-- Phone number — prominent tap target at the top of mobile menu -->
+    <!-- PLACEHOLDER: Replace href and text with Mike's actual phone number -->
+    <a href="tel:+1XXXXXXXXXX" class="mobile-phone-link" aria-label="Call Ironclad Inspections">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09A16 16 0 0016.09 16.1l.56-.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      [PLACEHOLDER: (250) XXX-XXXX]
+    </a>
+
     <a href="#about" class="mobile-nav-link">Why Ironclad</a>
     <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#pricing" class="mobile-nav-link">Pricing</a>
     <a href="#service-area" class="mobile-nav-link">Service Area</a>
     <a href="#testimonials" class="mobile-nav-link">Reviews</a>
+    <a href="#faq" class="mobile-nav-link">FAQ</a>
     <a href="#contact" class="mobile-nav-link">Contact</a>
     <a href="#booking" class="btn btn-primary">Book Your Inspection</a>
   </div>
@@ -1400,15 +1928,35 @@
 
           <p class="hero-subheadline">Thorough. Trusted. Inside &amp; Out.</p>
 
-          <!-- PLACEHOLDER: 1-2 sentences about Mike's approach -->
-          <p class="hero-intro">
-            [PLACEHOLDER: 1-2 sentences about Mike's approach to inspections — what makes Ironclad different. Example: "Mike Webber brings years of hands-on experience to every inspection, delivering the detailed reports and straight answers you need to make confident decisions about your home."]
-          </p>
+          <!-- ===================================================
+               PHONE NUMBER — primary contact for the 45-65 demographic
+               PLACEHOLDER: Replace href tel: and display text with Mike's real number
+               =================================================== -->
+          <div class="hero-phone">
+            <div class="hero-phone-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09A16 16 0 0016.09 16.1l.56-.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="hero-phone-text">
+              <span class="hero-phone-label">Call Mike directly</span>
+              <!-- PLACEHOLDER: Replace with Mike's actual phone number -->
+              <a href="tel:+1XXXXXXXXXX" aria-label="Call [PLACEHOLDER: (250) XXX-XXXX]">
+                [PLACEHOLDER: (250) XXX-XXXX]
+              </a>
+            </div>
+          </div>
+
+          <!-- Divider between phone and CTA buttons -->
+          <div class="hero-phone-divider" aria-hidden="true">or</div>
 
           <div class="hero-ctas">
             <a href="#booking" class="btn btn-primary">Book Your Inspection</a>
             <a href="#contact" class="btn btn-outline">Request a Callback</a>
           </div>
+
+          <!-- PLACEHOLDER: 1-2 sentences about Mike's approach -->
+          <p class="hero-intro">
+            [PLACEHOLDER: 1-2 sentences about Mike's approach to inspections — what makes Ironclad different. Example: "Mike Webber brings years of hands-on experience to every inspection, delivering the detailed reports and straight answers you need to make confident decisions about your home."]
+          </p>
 
           <p class="hero-location">
             <!-- Location pin icon -->
@@ -1588,6 +2136,74 @@
 
 
     <!-- ==========================================================
+         SECTION 3b: PRICING
+         Added between Services and Service Area.
+         Gives budget-conscious visitors a price anchor so they
+         don't bounce — they don't need exact prices, just a range.
+         ========================================================== -->
+    <section id="pricing" aria-labelledby="pricing-heading">
+      <div class="pricing-inner">
+
+        <div class="pricing-header">
+          <p class="section-label">Transparent Pricing</p>
+          <h2 class="section-heading section-heading--dark" id="pricing-heading">Inspection Pricing</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+          <p style="color: var(--text-body); max-width: 560px;">Straightforward pricing with no hidden fees. Final cost depends on the size and type of the property.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Card 1: Standard Home Inspection (featured) -->
+          <div class="pricing-card featured">
+            <p class="pricing-card-label">Most Popular</p>
+            <h3 class="pricing-card-title">Standard Home Inspection</h3>
+            <!-- PLACEHOLDER: Replace with Mike's actual starting price -->
+            <div class="pricing-price">[PLACEHOLDER: Starting from $XXX]</div>
+            <p class="pricing-price-note">Most homes • 2–4 hours</p>
+            <span class="pricing-divider" aria-hidden="true"></span>
+            <!-- PLACEHOLDER: Brief description of what's included in the standard inspection -->
+            <p class="pricing-card-desc">[PLACEHOLDER: Description — e.g., "Ideal for most residential purchases. Full inspection of all major systems and components including roof, structure, electrical, plumbing, HVAC, and interior. Detailed report delivered same-day."]</p>
+          </div>
+
+          <!-- Card 2: Large / Acreage Property -->
+          <div class="pricing-card">
+            <p class="pricing-card-label">Larger Properties</p>
+            <h3 class="pricing-card-title">Large / Acreage Property</h3>
+            <!-- PLACEHOLDER: Replace with Mike's actual pricing for larger properties -->
+            <div class="pricing-price">[PLACEHOLDER: Starting from $XXX]</div>
+            <p class="pricing-price-note">Larger homes & rural acreages</p>
+            <span class="pricing-divider" aria-hidden="true"></span>
+            <!-- PLACEHOLDER: Brief description for large/acreage inspections -->
+            <p class="pricing-card-desc">[PLACEHOLDER: Description — e.g., "For larger homes, rural properties, and acreages that require additional time and attention. Includes outbuildings and well/septic assessment where applicable."]</p>
+          </div>
+
+          <!-- Card 3: Additional Services -->
+          <div class="pricing-card">
+            <p class="pricing-card-label">Add-Ons</p>
+            <h3 class="pricing-card-title">Additional Services</h3>
+            <!-- PLACEHOLDER: Update with Mike's add-on offerings -->
+            <div class="pricing-price">[PLACEHOLDER: Pricing Varies]</div>
+            <p class="pricing-price-note">[PLACEHOLDER: e.g., Radon, thermal imaging]</p>
+            <span class="pricing-divider" aria-hidden="true"></span>
+            <!-- PLACEHOLDER: List or description of additional services available -->
+            <p class="pricing-card-desc">[PLACEHOLDER: Description — e.g., "Optional add-on services available including radon testing, thermal imaging, air quality testing, sewer scope, and more. Ask Mike about what's right for your property."]</p>
+          </div>
+
+        </div>
+
+        <!-- Call-to-action bar: phone quote prompt -->
+        <div class="pricing-cta-bar">
+          Not sure what you need? Call
+          <!-- PLACEHOLDER: Replace with Mike's actual phone number -->
+          <a href="tel:+1XXXXXXXXXX">[PLACEHOLDER: (250) XXX-XXXX]</a>
+          for a quick quote — no obligation.
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
          SECTION 4: SERVICE AREA
          ========================================================== -->
     <section id="service-area" aria-labelledby="area-heading">
@@ -1632,6 +2248,29 @@
     <!-- ==========================================================
          SECTION 5: TESTIMONIALS
          ========================================================== -->
+    <!--
+      ================================================================
+      TESTIMONIALS — THREE DISPLAY STATES
+      ================================================================
+
+      STATE 1 (Launch — 0 reviews) — CURRENTLY ACTIVE
+        Shows a confident, honest launch card instead of empty
+        placeholder testimonials. Includes a "Leave a Review" CTA.
+        This is what's built below.
+
+      STATE 2 (Early — 1–2 reviews)
+        When Mike has 1–2 real reviews, comment out the STATE 1
+        block below and uncomment the STATE 2 block.
+        A single card doesn't look sparse because the layout is
+        designed to work with 1, 2, or 3 cards (auto-fill grid).
+
+      STATE 3 (Established — 3+ reviews)
+        When Mike has 3+ reviews, switch to STATE 3. Use the same
+        .testimonials-grid layout — it fills 3 columns automatically.
+
+      ================================================================
+    -->
+
     <section id="testimonials" aria-labelledby="testimonials-heading">
       <div class="testimonials-inner">
 
@@ -1641,54 +2280,299 @@
           <span class="gold-rule" aria-hidden="true"></span>
         </div>
 
+        <!-- ======================================================
+             STATE 1: LAUNCH (currently active — 0 reviews)
+             Comment out this block when switching to State 2 or 3.
+             ====================================================== -->
+        <div class="testimonials-launch">
+
+          <div class="testimonials-launch-card">
+
+            <!-- Handshake / trust icon -->
+            <div class="testimonials-launch-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+
+            <div class="testimonials-launch-stars stars" aria-hidden="true">★★★★★</div>
+
+            <h3 class="testimonials-launch-headline">
+              New to Prince George.<br />Mike's Experience Isn't.
+            </h3>
+
+            <p class="testimonials-launch-text">
+              Ironclad Inspections is just getting started — but Mike brings years of hands-on trades experience to every inspection. Be one of our first clients and help us build our reputation the right way: one thorough inspection at a time.
+            </p>
+
+            <div class="testimonials-launch-actions">
+              <a href="#booking" class="btn btn-primary">Book Your Inspection</a>
+              <!--
+                PLACEHOLDER: Replace href with Mike's actual Google Business Profile review link.
+                Example: https://g.page/r/XXXXXXXXXX/review
+              -->
+              <a href="[PLACEHOLDER: Google Business Profile review link]" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                Leave Us a Review
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Google Business Profile link -->
+          <div class="testimonials-google-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <!--
+              PLACEHOLDER: Replace href with Mike's Google Business Profile URL.
+              Example: https://maps.google.com/?cid=XXXXXXXXXX
+            -->
+            <a
+              href="[PLACEHOLDER: Google Business Profile URL]"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="testimonials-google-link"
+              aria-label="See Ironclad Inspections reviews on Google"
+            >
+              [PLACEHOLDER: See our reviews on Google]
+            </a>
+          </div>
+
+        </div>
+        <!-- END STATE 1 -->
+
+
+        <!-- ======================================================
+             STATE 2: EARLY (1–2 reviews)
+             Uncomment this block and comment out STATE 1 above
+             when Mike has 1–2 real reviews to show.
+
+             The .testimonials-grid is auto-fill minmax(300px, 1fr)
+             so 1 or 2 cards fill naturally without gaps looking empty.
+
         <div class="testimonials-grid">
 
-          <!-- Testimonial 1 — PLACEHOLDER -->
           <article class="testimonial-card">
             <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testimonial-quote">
-              "[PLACEHOLDER: Testimonial quote 1 — something a satisfied client said about their experience with Mike. E.g., 'Mike was incredibly thorough — he found things even the seller's agent didn't know about. His report was clear, detailed, and saved us from a very expensive mistake.']"
+              "[PLACEHOLDER: First real client quote]"
             </blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">[A]</div>
               <div>
-                <div class="testimonial-name">[PLACEHOLDER: Client Name 1]</div>
-                <div class="testimonial-context">[PLACEHOLDER: Context — e.g., Pre-Purchase Inspection, Prince George]</div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Testimonial 2 — PLACEHOLDER -->
-          <article class="testimonial-card">
-            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="testimonial-quote">
-              "[PLACEHOLDER: Testimonial quote 2 — another client experience. E.g., 'We listed our home with confidence because Mike's pre-listing inspection helped us fix the right things first. Our sale went smooth as could be.']"
-            </blockquote>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">[B]</div>
-              <div>
-                <div class="testimonial-name">[PLACEHOLDER: Client Name 2]</div>
-                <div class="testimonial-context">[PLACEHOLDER: Context — e.g., Pre-Listing Inspection, Prince George]</div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Testimonial 3 — PLACEHOLDER -->
-          <article class="testimonial-card">
-            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="testimonial-quote">
-              "[PLACEHOLDER: Testimonial quote 3 — a third client experience. E.g., 'I appreciated how Mike explained everything as we walked through the house. He was patient with all my questions and I left feeling like I truly understood the property.']"
-            </blockquote>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">[C]</div>
-              <div>
-                <div class="testimonial-name">[PLACEHOLDER: Client Name 3]</div>
-                <div class="testimonial-context">[PLACEHOLDER: Context — e.g., New Construction Inspection, [Community]]</div>
+                <div class="testimonial-name">[PLACEHOLDER: Client Name]</div>
+                <div class="testimonial-context">[PLACEHOLDER: Service type, location]</div>
               </div>
             </div>
           </article>
 
         </div>
+
+        <div style="text-align:center;margin-top:24px;">
+          <a href="[PLACEHOLDER: Google Business Profile review link]"
+             target="_blank" rel="noopener noreferrer"
+             class="testimonials-google-link">
+            [PLACEHOLDER: See all our reviews on Google]
+          </a>
+        </div>
+             END STATE 2 -->
+
+
+        <!-- ======================================================
+             STATE 3: ESTABLISHED (3+ reviews)
+             Uncomment this block when Mike has 3 or more reviews.
+             Comment out STATE 1 above.
+
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "[PLACEHOLDER: Testimonial quote 1]"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">[A]</div>
+              <div>
+                <div class="testimonial-name">[PLACEHOLDER: Client Name 1]</div>
+                <div class="testimonial-context">[PLACEHOLDER: Service, location]</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "[PLACEHOLDER: Testimonial quote 2]"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">[B]</div>
+              <div>
+                <div class="testimonial-name">[PLACEHOLDER: Client Name 2]</div>
+                <div class="testimonial-context">[PLACEHOLDER: Service, location]</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "[PLACEHOLDER: Testimonial quote 3]"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">[C]</div>
+              <div>
+                <div class="testimonial-name">[PLACEHOLDER: Client Name 3]</div>
+                <div class="testimonial-context">[PLACEHOLDER: Service, location]</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:24px;">
+          <a href="[PLACEHOLDER: Google Business Profile URL]"
+             target="_blank" rel="noopener noreferrer"
+             class="testimonials-google-link">
+            [PLACEHOLDER: See all our reviews on Google]
+          </a>
+        </div>
+             END STATE 3 -->
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 5b: FAQ
+         Positioned between Testimonials and Booking to kill
+         objections right before the visitor hits the booking CTA.
+         ========================================================== -->
+    <section id="faq" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+
+        <div class="faq-header">
+          <p class="section-label">Got Questions?</p>
+          <h2 class="section-heading section-heading--light" id="faq-heading">Common Questions</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+          <p class="section-subheading" style="margin: 0 auto; text-align: center;">Everything you need to know before booking.</p>
+        </div>
+
+        <!-- ======================================================
+             FAQ ACCORDION
+             JS at the bottom of the page toggles .open on each
+             .faq-item when its .faq-question button is clicked.
+             ====================================================== -->
+        <div class="faq-list" role="list">
+
+          <!-- FAQ 1 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+              <span class="faq-question-text">How long does a home inspection take?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-1" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about inspection duration -->
+                [PLACEHOLDER: e.g., "Most inspections take 2–4 hours depending on the size and age of the home. Larger or older properties may take longer. You're welcome to attend the whole time — most clients find it the most valuable part."]
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+              <span class="faq-question-text">What does a home inspection include?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-2" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about what's covered in a standard inspection -->
+                [PLACEHOLDER: e.g., "We inspect the roof, exterior, foundation, structure, insulation, attic, plumbing, electrical, heating, cooling, interior finishes, and ventilation. You'll receive a detailed report with photos covering every area we assess."]
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+              <span class="faq-question-text">Do I need to be there during the inspection?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-3" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about client attendance policy -->
+                [PLACEHOLDER: e.g., "You're welcome to attend — most clients find it incredibly valuable to walk through the findings in person with Mike. But it's not required. Either way, you'll receive a full written report explaining everything."]
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+              <span class="faq-question-text">When will I get my report?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-4" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about report delivery timeline -->
+                [PLACEHOLDER: e.g., "You'll receive your full inspection report within 24 hours of the inspection — usually the same day. The report includes photos, clear descriptions, and prioritized recommendations so you know exactly what needs attention."]
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+              <span class="faq-question-text">How much does a home inspection cost?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-5" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about pricing — reference the pricing section above -->
+                [PLACEHOLDER: e.g., "Pricing starts at $XXX for a standard home inspection. The final cost depends on the size and type of the property. Call us at (250) XXX-XXXX for a quick quote with no obligation — it only takes a minute."]
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+              <span class="faq-question-text">What happens if you find something major?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-6" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about major findings and how Mike handles them -->
+                [PLACEHOLDER: e.g., "We document everything thoroughly and walk you through every finding so you can make an informed decision. Ironclad isn't here to kill deals — we're here to make sure you know exactly what you're getting into. Whether it's a small fix or a serious issue, you'll have the information you need."]
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
+              <span class="faq-question-text">What areas do you serve?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-7" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about service area — update with Mike's actual coverage -->
+                [PLACEHOLDER: e.g., "We cover Prince George and surrounding communities within [X] km, including [community names]. Not sure if we cover your area? Give us a call at (250) XXX-XXXX — we're happy to confirm and can often travel further for the right job."]
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8">
+              <span class="faq-question-text">How do I book an inspection?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-8" role="region">
+              <p>
+                <!-- PLACEHOLDER: Answer about booking options — phone, online, callback form -->
+                [PLACEHOLDER: e.g., "Three easy ways: use our online booking calendar below, call Mike directly at (250) XXX-XXXX, or fill out the callback form and Mike will get back to you within a few hours. Most inspections can be scheduled within a few days."]
+              </p>
+            </div>
+          </div>
+
+        </div><!-- end .faq-list -->
       </div>
     </section>
 
@@ -2031,7 +2915,32 @@
     }
 
     // ----------------------------------------------------------------
-    // 5. Smooth scroll polyfill for older browsers
+    // 5. FAQ Accordion
+    //    Toggles the .open class on .faq-item when its question
+    //    button is clicked. Updates aria-expanded for accessibility.
+    //    Only one FAQ can be open at a time (auto-closes others).
+    // ----------------------------------------------------------------
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+
+        // Close all open FAQ items
+        document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // If this item was not open, open it now
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ----------------------------------------------------------------
+    // 6. Smooth scroll polyfill for older browsers
     //    (Modern browsers handle scroll-behavior: smooth in CSS)
     // ----------------------------------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
