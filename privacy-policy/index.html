@@ -5,168 +5,389 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | DayOnePros</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/IconOnly_Transparent_NoBuffer.png">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ===== Variables ===== */
+        :root {
+            --forest: #1B4332;
+            --forest-mid: #2D6A4F;
+            --lime: #BFFF00;
+            --lime-hover: #A6E000;
+            --cream: #FAFAF7;
+            --mint-light: #D1FAE5;
+            --border-light: #E5E7EB;
+            --text-dark: #1A1A1A;
+            --text-body: #4B5563;
+            --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ===== Reset ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #333;
+            font-family: var(--font-body);
+            font-size: 16px;
             line-height: 1.7;
-            background: #fff;
+            color: var(--text-body);
+            background-color: var(--cream);
         }
 
-        /* ---- Header ---- */
-        header {
-            background: #2D3319;
-            padding: 1rem 2rem;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: var(--forest);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover { color: var(--forest-mid); }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--forest);
+            padding: 16px 0;
+        }
+
+        .nav-container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-        }
-        header a.logo {
-            display: flex;
             align-items: center;
-            text-decoration: none;
-        }
-        header .logo-text {
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        header nav a {
-            color: #e8e8e8;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-left: 1.5rem;
-            transition: color 0.2s;
-        }
-        header nav a:hover { color: #fff; }
-
-        /* ---- Content ---- */
-        .content {
-            max-width: 760px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
+            padding: 0 24px;
         }
-        .content h1 {
-            font-size: 2rem;
-            color: #2D3319;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
         }
-        .last-updated {
-            color: #888;
-            font-size: 0.85rem;
-            margin-bottom: 2.5rem;
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 8px;
         }
-        .content h2 {
-            font-size: 1.15rem;
-            color: #2D3319;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
+
+        .nav-link {
+            color: var(--mint-light);
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+        }
+
+        .nav-link:hover { color: var(--lime); }
+
+        .nav-cta {
+            background-color: var(--lime);
+            color: var(--forest) !important;
             font-weight: 600;
         }
+
+        .nav-cta:hover {
+            background-color: var(--lime-hover);
+            color: var(--forest) !important;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--lime);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        /* Hamburger → X animation */
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ===== Content ===== */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+        }
+
+        .content h1 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 2.25rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            color: #9CA3AF;
+            font-size: 0.875rem;
+            margin-bottom: 2.5rem;
+            font-family: var(--font-body);
+        }
+
+        .content h2 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--forest);
+            margin-top: 2.25rem;
+            margin-bottom: 0.75rem;
+        }
+
         .content h3 {
+            font-family: var(--font-heading);
+            font-weight: 600;
             font-size: 1rem;
-            color: #555;
+            color: var(--text-body);
             margin-top: 1.25rem;
             margin-bottom: 0.5rem;
-            font-weight: 600;
         }
+
         .content p {
             margin-bottom: 1rem;
             font-size: 0.95rem;
-            color: #444;
+            color: var(--text-body);
+            line-height: 1.7;
         }
+
         .content ul {
             margin-bottom: 1rem;
-            padding-left: 1.5rem;
+            padding-left: 0;
+            list-style: none;
         }
+
         .content ul li {
             margin-bottom: 0.4rem;
             font-size: 0.95rem;
-            color: #444;
+            color: var(--text-body);
+            padding-left: 1.25rem;
+            position: relative;
         }
+
+        .content ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            background-color: var(--lime);
+            border-radius: 50%;
+        }
+
         .content a {
-            color: #2D3319;
-            text-decoration: none;
+            color: var(--forest);
         }
-        .content a:hover { text-decoration: underline; }
+
+        .content a:hover { color: var(--forest-mid); }
 
         .disclaimer {
-            background: #f7f9fc;
-            border-left: 3px solid #2D3319;
+            background: #fff;
+            border-left: 3px solid var(--lime);
             padding: 1rem 1.25rem;
             margin: 2rem 0;
             font-size: 0.9rem;
-            color: #555;
+            color: var(--text-body);
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* ===== Tables ===== */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin: 1rem 0 1.5rem;
+            -webkit-overflow-scrolling: touch;
         }
 
         table.data-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
             font-size: 0.9rem;
+            background: #fff;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
         }
+
         table.data-table th {
-            background: #f0f4f8;
+            background: var(--forest);
+            color: #fff;
             text-align: left;
-            padding: 0.6rem 0.8rem;
+            padding: 0.75rem 1rem;
             font-weight: 600;
-            color: #2D3319;
-            border-bottom: 2px solid #d9d9d9;
+            font-family: var(--font-heading);
         }
+
         table.data-table td {
-            padding: 0.6rem 0.8rem;
-            border-bottom: 1px solid #eee;
-            color: #444;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-body);
             vertical-align: top;
         }
 
-        /* ---- Footer ---- */
-        footer {
-            background: #2D3319;
-            padding: 2rem;
+        table.data-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.data-table tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background-color: var(--forest);
+            padding: 48px 24px;
             text-align: center;
         }
-        footer .footer-brand {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
+
+        .footer-logo img {
+            height: 36px;
+            width: auto;
+            margin: 0 auto 12px;
         }
-        footer .footer-tagline {
-            color: #BFFF00;
+
+        .footer-tagline {
+            color: var(--lime);
+            font-size: 0.875rem;
+            font-family: var(--font-body);
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--mint-light);
+            opacity: 0.7;
+            font-size: 0.875rem;
+            font-family: var(--font-body);
+            margin: 0 0.5rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-links a:hover { opacity: 1; color: var(--mint-light); }
+
+        .footer-copyright {
+            color: var(--mint-light);
+            opacity: 0.7;
             font-size: 0.8rem;
-            margin-bottom: 1rem;
+            font-family: var(--font-body);
         }
-        footer .footer-links a {
-            color: #BFFF00;
-            text-decoration: none;
-            font-size: 0.8rem;
-            margin: 0 0.75rem;
-        }
-        footer .footer-links a:hover { color: #fff; }
-        footer .footer-copy {
-            color: #666;
-            font-size: 0.75rem;
-            margin-top: 1rem;
+
+        /* ===== Mobile ===== */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--forest);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 24px 20px;
+                gap: 4px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-link {
+                display: block;
+                width: 100%;
+                padding: 12px 0;
+                border-radius: 0;
+            }
+
+            .nav-cta {
+                display: inline-block;
+                width: auto;
+                padding: 10px 20px;
+                border-radius: 6px;
+                margin-top: 8px;
+            }
+
+            .navbar {
+                position: relative;
+            }
+
+            .content {
+                padding-top: 40px;
+            }
+
+            .content h1 {
+                font-size: 1.75rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <a href="https://dayonepros.com" class="logo">
-        <img src="../images/FullLogo_Transparent_NoBuffer.png" alt="DayOnePros Logo" style="height: 32px;">
-    </a>
-    <nav>
-        <a href="https://dayonepros.com">Home</a>
-        <a href="https://dayonepros.com/terms-of-service">Terms of Service</a>
-    </nav>
-</header>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="https://dayonepros.com" class="nav-logo">
+            <img src="../images/FullLogo_Transparent_NoBuffer.png" alt="DayOnePros Logo">
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="https://dayonepros.com" class="nav-link">Home</a></li>
+            <li><a href="https://dayonepros.com/terms-of-service" class="nav-link">Terms of Service</a></li>
+            <li><a href="https://dayonepros.com/scope-call" target="_blank" rel="noopener noreferrer" class="nav-link nav-cta">Let's Talk</a></li>
+        </ul>
+    </div>
+</nav>
 
 <div class="content">
     <h1>Privacy Policy</h1>
@@ -177,37 +398,39 @@
     </div>
 
     <h2>1. Who We Are</h2>
-    <p>DayOnePros is an AI automation consultancy operated by Carol Leung, based in Medicine Hat, Alberta, Canada. We help service businesses recover revenue through database reactivation, AI automation, and workflow optimization.</p>
+    <p>DayOnePros is an operations consultancy operated by Carol Leung, based in Calgary, Alberta, Canada. We help small business owners build systems that take the admin off their plate, from automated follow-ups to workflow design and process improvement.</p>
     <p>For privacy questions, contact us at <a href="mailto:carol@dayonepros.com">carol@dayonepros.com</a>.</p>
 
     <h2>2. What Information We Collect</h2>
 
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>Information</th>
-                <th>When We Collect It</th>
-                <th>Why</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Name and email address</td>
-                <td>When you download a free resource or fill out a form</td>
-                <td>To deliver the resource and send follow-up communications you opted into</td>
-            </tr>
-            <tr>
-                <td>Name, email, and meeting details</td>
-                <td>When you book a scope call</td>
-                <td>To schedule and prepare for the call</td>
-            </tr>
-            <tr>
-                <td>Website usage data</td>
-                <td>When you browse our website</td>
-                <td>To understand how people use our site and improve it</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-wrapper">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Information</th>
+                    <th>When We Collect It</th>
+                    <th>Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name and email address</td>
+                    <td>When you download a free resource or fill out a form</td>
+                    <td>To deliver the resource and send follow-up communications you opted into</td>
+                </tr>
+                <tr>
+                    <td>Name, email, and meeting details</td>
+                    <td>When you book a scope call</td>
+                    <td>To schedule and prepare for the call</td>
+                </tr>
+                <tr>
+                    <td>Website usage data</td>
+                    <td>When you browse our website</td>
+                    <td>To understand how people use our site and improve it</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <p>We do not collect sensitive personal information such as financial data, government IDs, or health information through our website.</p>
 
@@ -234,42 +457,44 @@
     <p>We do not sell, rent, or trade your personal information. Period.</p>
     <p>We use the following third-party services to operate our website and deliver our resources:</p>
 
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>Service</th>
-                <th>Purpose</th>
-                <th>What They Access</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Google Forms</td>
-                <td>Collecting form submissions</td>
-                <td>Name, email, and responses you submit</td>
-            </tr>
-            <tr>
-                <td>Google Workspace (Gmail, Sheets)</td>
-                <td>Email delivery and contact management</td>
-                <td>Name and email address</td>
-            </tr>
-            <tr>
-                <td>Google Calendar</td>
-                <td>Scope call scheduling</td>
-                <td>Name, email, and meeting details</td>
-            </tr>
-            <tr>
-                <td>GitHub Pages</td>
-                <td>Website hosting</td>
-                <td>Standard web server logs</td>
-            </tr>
-            <tr>
-                <td>YouTube (embedded videos)</td>
-                <td>Video content</td>
-                <td>Standard YouTube tracking (governed by Google's privacy policy)</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-wrapper">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Purpose</th>
+                    <th>What They Access</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Google Forms</td>
+                    <td>Collecting form submissions</td>
+                    <td>Name, email, and responses you submit</td>
+                </tr>
+                <tr>
+                    <td>Google Workspace (Gmail, Sheets)</td>
+                    <td>Email delivery and contact management</td>
+                    <td>Name and email address</td>
+                </tr>
+                <tr>
+                    <td>Google Calendar</td>
+                    <td>Scope call scheduling</td>
+                    <td>Name, email, and meeting details</td>
+                </tr>
+                <tr>
+                    <td>GitHub Pages</td>
+                    <td>Website hosting</td>
+                    <td>Standard web server logs</td>
+                </tr>
+                <tr>
+                    <td>YouTube (embedded videos)</td>
+                    <td>Video content</td>
+                    <td>Standard YouTube tracking (governed by Google's privacy policy)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <p>Each of these services has their own privacy policies. We encourage you to review them if you have concerns.</p>
 
@@ -304,24 +529,46 @@
     <p>If you have questions or concerns about this privacy policy or how we handle your information, please contact us:</p>
     <p>
         Carol Leung<br>
-        DayOnePros AI Consulting<br>
+        DayOnePros<br>
         005 Dalhousie Dr NW Unit 175 #1331<br>
         Calgary, AB T3A 5R8<br>
         <a href="mailto:carol@dayonepros.com">carol@dayonepros.com</a>
     </p>
 </div>
 
-<footer>
-    <div class="footer-brand">DayOnePros AI Consulting</div>
-    <div class="footer-tagline">Turning missed follow-ups into booked jobs for service businesses.</div>
-    <div class="footer-links">
-        <a href="https://dayonepros.com">Home</a>
-        <a href="https://dayonepros.com/terms-of-service">Terms of Service</a>
-        <a href="https://dayonepros.com/privacy-policy">Privacy Policy</a>
-        <a href="mailto:carol@dayonepros.com">Contact</a>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-logo">
+        <img src="../images/FullLogo_Transparent_NoBuffer.png" alt="DayOnePros Logo">
     </div>
-    <div class="footer-copy">&copy; 2026 DayOnePros AI Consulting. All rights reserved.</div>
+    <p class="footer-tagline">Operations support for small businesses that are ready to grow.</p>
+    <div class="footer-links">
+        <a href="https://dayonepros.com">Home</a> |
+        <a href="https://dayonepros.com/terms-of-service">Terms of Service</a> |
+        <a href="https://dayonepros.com/privacy-policy">Privacy Policy</a>
+    </div>
+    <p class="footer-copyright">&copy; 2026 DayOnePros. All rights reserved.</p>
 </footer>
+
+<script>
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+
+    toggle.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when a link is clicked
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', false);
+        });
+    });
+</script>
 
 </body>
 </html>
