@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Catalog | Premium Bookstore Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
+        
+        /* Custom Pulse for Stock Indicator */
+        .pulse-green {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* Spinner for Button */
+        .spinner { border: 2px solid rgba(255,255,255,0.3); border-top: 2px solid white; border-radius: 50%; width: 14px; height: 14px; animation: spin 0.8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Cart Tray Transition */
+        #cartTray { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); transform: translateY(100%); }
+        #cartTray.visible { transform: translateY(0); }
+    </style>
+</head>
+<body class="pb-24">
+
+    <div class="max-w-6xl mx-auto px-6 pt-12">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl font-semibold text-gray-900 tracking-tight">Shadow Catalog Search</h1>
+            <p class="text-gray-500 mt-2">Instant distributor access via Supabase + Google Books API</p>
+            
+            <div class="mt-8 max-w-xl mx-auto relative">
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Search 'C.S. Lewis', 'NIV', or 'Max Lucado'..."
+                    class="w-full pl-6 pr-12 py-4 bg-white border border-gray-200 rounded-2xl shadow-sm focus:ring-2 focus:ring-black outline-none transition-all"
+                >
+                <div class="absolute right-4 top-4 text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div id="resultsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        
+        <!-- Empty State -->
+        <div id="emptyState" class="text-center py-20 text-gray-400">
+            <p>Type to query the 2-million-row shadow index...</p>
+        </div>
+    </div>
+
+    <!-- Floating Micro-Cart Tray -->
+    <div id="cartTray" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-5 shadow-2xl z-50 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Live Sync</div>
+                <span id="cartSummary" class="text-sm font-medium text-gray-300">0 Shadow Items Ready for Shopify Cart</span>
+            </div>
+            <div class="flex items-center gap-8">
+                <div class="text-right">
+                    <p class="text-[10px] text-gray-400 uppercase font-bold">Estimated Total</p>
+                    <p id="cartTotal" class="text-xl font-semibold">$0.00</p>
+                </div>
+                <button class="bg-white text-black px-8 py-3 rounded-xl font-bold text-sm hover:bg-gray-200 transition-colors">
+                    Push to Shopify
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const shadowCatalog = [
+            { title: 'The NIV Study Bible', isbn: '9780310438922', author: 'Zondervan', price: 49.99 },
+            { title: 'Mere Christianity', isbn: '9780060652921', author: 'C.S. Lewis', price: 15.99 },
+            { title: 'The Purpose Driven Life', isbn: '9780310337508', author: 'Rick Warren', price: 18.50 },
+            { title: 'You Are Special', isbn: '9781433589133', author: 'Max Lucado', price: 14.95 },
+            { title: 'New Morning Mercies', isbn: '9781433541384', author: 'Paul David Tripp', price: 22.99 }
+        ];
+
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        const searchInput = document.getElementById('searchInput');
+        const resultsGrid = document.getElementById('resultsGrid');
+        const emptyState = document.getElementById('emptyState');
+        const cartTray = document.getElementById('cartTray');
+
+        searchInput.addEventListener('input', async (e) => {
+            const query = e.target.value.toLowerCase();
+            if (query.length < 2) {
+                resultsGrid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            const matches = shadowCatalog.filter(book => 
+                book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query)
+            );
+
+            if (matches.length > 0) {
+                emptyState.classList.add('hidden');
+                showSkeletons(matches.length);
+                await fetchAndRender(matches);
+            }
+        });
+
+        function showSkeletons(count) {
+            resultsGrid.innerHTML = Array(count).fill(0).map(() => `
+                <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+                    <div class="flex gap-4 mb-4">
+                        <div class="w-24 h-36 bg-gray-200 animate-pulse rounded shadow-inner"></div>
+                        <div class="flex-1 space-y-3 py-1">
+                            <div class="h-3 bg-gray-200 animate-pulse rounded w-3/4"></div>
+                            <div class="h-5 bg-gray-200 animate-pulse rounded w-full"></div>
+                            <div class="h-4 bg-gray-200 animate-pulse rounded w-1/2"></div>
+                        </div>
+                    </div>
+                    <div class="h-10 bg-gray-100 animate-pulse rounded-xl w-full"></div>
+                </div>
+            `).join('');
+        }
+
+        async function fetchAndRender(books) {
+            const cards = await Promise.all(books.map(async (book) => {
+                try {
+                    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${book.isbn}`);
+                    const data = await response.json();
+                    const info = data.items ? data.items[0].volumeInfo : {};
+                    const img = info.imageLinks ? info.imageLinks.thumbnail.replace('http:', 'https:') : 'https://via.placeholder.com/128x192?text=No+Cover';
+                    
+                    // Simulated live stock count based on ISBN digits
+                    const stockCount = Math.floor(Math.random() * 50) + 5;
+
+                    return `
+                        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col">
+                            <div class="flex gap-4 mb-4">
+                                <img src="${img}" class="w-24 h-36 object-cover rounded shadow-sm flex-shrink-0">
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="h-2 w-2 rounded-full bg-green-500 pulse-green"></span>
+                                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">${stockCount} copies at PubStock</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-900 leading-tight">${book.title}</h3>
+                                    <p class="text-sm text-gray-500 mt-1">${book.author}</p>
+                                    <p class="text-sm font-semibold text-gray-900 mt-auto">$${book.price.toFixed(2)}</p>
+                                </div>
+                            </div>
+                            <button 
+                                onclick="handleAddToCart('${book.title}', ${book.price}, this)"
+                                class="mt-auto w-full py-3 bg-black text-white text-sm font-bold rounded-xl hover:bg-gray-800 transition-all flex items-center justify-center gap-2"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    `;
+                } catch (err) { return ''; }
+            }));
+            resultsGrid.innerHTML = cards.join('');
+        }
+
+        async function handleAddToCart(title, price, btn) {
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<div class="spinner"></div> <span>Syncing...</span>`;
+
+            // Simulate n8n workflow / Shopify API latency
+            await new Promise(r => setTimeout(r, 1000));
+
+            // Update Global State
+            cartCount++;
+            cartTotal += price;
+
+            // Update UI
+            document.getElementById('cartSummary').innerText = `${cartCount} Shadow Item${cartCount > 1 ? 's' : ''} Ready for Shopify Cart`;
+            document.getElementById('cartTotal').innerText = `$${cartTotal.toFixed(2)}`;
+            cartTray.classList.add('visible');
+
+            btn.innerHTML = `<span>Added!</span>`;
+            btn.classList.replace('bg-black', 'bg-green-600');
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                btn.classList.replace('bg-green-600', 'bg-black');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
